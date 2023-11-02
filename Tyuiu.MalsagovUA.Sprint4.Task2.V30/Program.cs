@@ -36,8 +36,11 @@ namespace Tyuiu.MalsagovUA.Sprint4.Task2.V30
             {
                 array[i] = rnd.Next(2, 9);
             }
-            string text = $"{array[0]}, {array[1]}, {array[2]}, {array[3]}, {array[4]}, {array[5]}, {array[6]}, {array[7]}, {array[8]}, {array[9]}";
-            Console.WriteLine($"Получившийся массив: {text}");
+            Console.WriteLine("Получившийся массив:");
+            foreach (int element in array)
+            {
+                Console.WriteLine(element);
+            }
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
