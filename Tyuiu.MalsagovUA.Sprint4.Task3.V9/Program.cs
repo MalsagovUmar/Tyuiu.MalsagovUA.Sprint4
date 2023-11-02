@@ -4,44 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Tyuiu.MalsagovUA.Sprint4.Task2.V30.Lib;
-namespace Tyuiu.MalsagovUA.Sprint4.Task2.V30
+using Tyuiu.MalsagovUA.Sprint4.Task3.V9.Lib;
+namespace Tyuiu.MalsagovUA.Sprint4.Task3.V9
 {
     class Program
     {
         static void Main(string[] args)
         {
             DataService ds = new DataService();
-            Random rnd = new Random();
+            int[,] array = new int[5, 5] { { 9, 6, 4, 5, 3 },
+                                           { 7, 4, 7, 5, 3 },
+                                           { 8, 5, 9, 9, 3 },
+                                           { 7, 8, 7, 9, 3 },
+                                           { 3, 7, 3, 7, 7 } };
+            int rows = array.GetUpperBound(0) + 1;
+            int columns = array.Length / rows;
             Console.Title = "Спринт #4 | Выполнил: Мальсагов У.А. | АСОиУб-23-2";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
-            Console.WriteLine("* Тема: Одномерные массивы (генератор случайных чисел)                    *");
-            Console.WriteLine("* Задание #2                                                              *");
-            Console.WriteLine("* Вариант #30                                                             *");
+            Console.WriteLine("* Тема: Двумерные массивы (статический ввод)                              *");
+            Console.WriteLine("* Задание #3                                                              *");
+            Console.WriteLine("* Вариант #9                                                              *");
             Console.WriteLine("* Выполнил: Мальсагов Умар Асланович | АСОиУб-23-2                        *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* Дан одномерный целочисленный массив на 10 элементов, заполненный        *");
-            Console.WriteLine("* случайными числами в диапозоне от 2 до 8.                              *");
-            Console.WriteLine("* Необходимо подсчитать произведение нечётных элементов массива.          *");
+            Console.WriteLine("* Дан двумерный целочисленный массив 5 на 5 элементов, заполненный        *");
+            Console.WriteLine("* статическими значениями в диапазоне от 3 до 9.                          *");
+            Console.WriteLine("* Найдите сумму элементов во втором столбце массива.                      *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("Введите количество элементов в массиве:");
-            int lenght = Convert.ToInt32(Console.ReadLine());
-            int[] array = new int[lenght];
-            for (int i = 0; i < lenght; i++)
+            Console.WriteLine("Исходный массив:");
+            for (int i = 0; i < rows; i++)
             {
-                array[i] = rnd.Next(2, 9);
+                for (int j = 0; j < columns; j++)
+                {
+                    Console.WriteLine(array[i, j]);
+                }
             }
-            string text = $"{array[0]}, {array[1]}, {array[2]}, {array[3]}, {array[4]}, {array[5]}, {array[6]}, {array[7]}, {array[8]}, {array[9]}";
-            Console.WriteLine($"Получившийся массив: {text}");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine($"Произведение нечётных элементов массива: {ds.Calculate(array)}");
+            Console.WriteLine($"Сумма элементов во втором столбце массива: {ds.Calculate(array)}");
             Console.ReadKey();
         }
     }
