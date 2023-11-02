@@ -18,7 +18,7 @@ namespace Tyuiu.MalsagovUA.Sprint4.Task3.V9.Lib
             {
                 for (int j = 0; j < columns; j++)
                 {
-                    if (j == 2)
+                    if (j == 1)
                     {
                         res += array[i, j];
                     }
